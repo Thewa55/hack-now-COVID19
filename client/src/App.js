@@ -30,13 +30,6 @@ function App() {
     );
   }
 
-  function getStates() {
-    API.getCurrentCovid()
-      .then(res => {
-        setStates(res.data)
-      })
-  }
-
   function getHeadlines() {
     API.getTopHeadlines()
       .then(res => {

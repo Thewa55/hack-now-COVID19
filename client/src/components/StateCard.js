@@ -40,15 +40,7 @@ export default function StateCard(props) {
                     </div>
                 </div>
                 <div class="extra content">
-                    <div class="ui indicating progress">
-                        <div class="bar" style={{
-                            width: percentPositive * 2
-                            , backgroundColor: 'powderblue'
-                        }}>
-                            <div class="progress"></div>
-                            <div class="label">{percentPositive}</div>
-                        </div>
-                    </div>
+                
                 </div>
             </div>
         </>
