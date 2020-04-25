@@ -29,16 +29,16 @@ function App() {
     );
   }
 
-  function getStates(){
+  function getStates() {
     API.getCurrentCovid()
       .then(res => {
         setStates(res.data)
       })
   }
 
-  function getHeadlines(){
+  function getHeadlines() {
     API.getTopHeadlines()
-      .then(res =>{
+      .then(res => {
         setHeadlines(res.data)
       })
   }
@@ -63,11 +63,15 @@ function App() {
         <Icon name="download" />
         Download
       </Button>
-      {states.map(element => (
-        <StateCard
-        state={element}
-        />
-      ))}
+      <div class="ui container">
+        <div class="ui three stackable cards">
+          {states.map(element => (
+            <StateCard
+              state={element}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
