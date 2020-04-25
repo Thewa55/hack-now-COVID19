@@ -7,7 +7,7 @@ const ProtectModal = () => (
     <Modal.Content>
       <Modal.Description>
         <Header>Tips and safety guidelines to decrease and curbing COVID-19</Header>
-        <p>The best way to prevent illness is to avoid being exposed to this virus.</p>
+        <p>The best way to prevent illness is to avoid being exposed to the virus.</p>
         <p>Wash your hand with soap and water for at least 20 seconds.</p>
         <p>The virus is thought to mainly spread from person-to-person, so keep a safe social distancing from each other.</p>
         <p>Avoid close contact with other people and try to stay home as much as possible.</p>
