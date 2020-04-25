@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const newsapi = process.env.News_API
+const newsapi = process.env.REACT_APP_NEWS_API
 
 export default {
   getCurrentCovid: function(){
@@ -8,6 +8,6 @@ export default {
   },
   
   getTopHeadlines: function(){
-    return axios.get(`https://newsapi.org/v2/everything?q=COVID&from=2020-03-16&sortBy=publishedAt&apiKey=${newsapi}&pageSize=100&page=2`)
+    return axios.get(`https://newsapi.org/v2/everything?q=COVID&from=2020-04-20&sortBy=publishedAt&apiKey=${newsapi}&pageSize=100`)
   }
 } 
