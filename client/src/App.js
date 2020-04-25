@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { Button, Icon } from 'semantic-ui-react';
 import API from "./utils/API";
 import StateCard from './components/StateCard';
 import MapContainer from './components/MapContainer'
@@ -11,7 +10,7 @@ function App() {
 
   const [states, setStates] = useState([])
   const [headlines, setHeadlines] = useState([])
-  const [coords, setCoords] = useState({latitude: 0, longitude: 0})
+  const [coords, setCoords] = useState({lat: 0, lng: 0})
 
   function getStates(){
     API.getCurrentCovid()
@@ -22,10 +21,12 @@ function App() {
 
   function position() {
      navigator.geolocation.getCurrentPosition(
-      position => setCoords({ 
-        latitude: position.coords.latitude, 
-        longitude: position.coords.longitude
-      }), 
+      position => {
+          setCoords({ 
+          lat: position.coords.latitude, 
+          lng: position.coords.longitude
+        })
+      }, 
       err => console.log(err)
     );
   }
@@ -46,22 +47,22 @@ function App() {
 
 
   useEffect(() => {
+    position()
     getStates()
     getHeadlines()
-    position()
   }, [])
 
   console.log(states)
   console.log(headlines)
-  console.log(coords)
+  console.log(coords, "coords")
+
   return (
     <div className="App">
       landing page
-      <MapContainer />
-      <Button size="small" color="green">
-        <Icon name="download" />
-        Download
-      </Button>
+      <div className="Map">
+        <MapContainer coords={coords}/>
+      </div>
+      
       <div class="ui container">
         <div class="ui three stackable cards">
           {states.map(element => (

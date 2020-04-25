@@ -4,8 +4,25 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 export class MapContainer extends Component {
 
   render() {
+    const style = {
+        position: 'flex',
+        width: '100%',
+        height: '100%',
+      }
+      const containerStyle = {
+        position: 'absolute',  
+        width: '100%',
+        height: '500px',
+      }
+      
     return (
-      <Map className="map" google={this.props.google} zoom={14} initialCenter={{lat: 40.854885,lng: -88.081807}}>
+      <Map 
+        style={style} 
+        google={this.props.google} 
+        zoom={14} 
+        center={this.props.coords}
+        containerStyle={containerStyle}
+        >
  
         <Marker 
                 name={'Current location'} />
@@ -20,11 +37,6 @@ export class MapContainer extends Component {
   }
 }
 const googleMapApi= process.env.REACT_APP_GOOGLE_MAP_KEY
-const newsapi = process.env.REACT_APP_NEWS_API
-
-console.log(googleMapApi, "GOOGLE MAP API KEY")
-console.log(newsapi, "NEWS API KEY")
-console.log(process.env, "PROCESS")
 
 export default GoogleApiWrapper({
   apiKey: googleMapApi
