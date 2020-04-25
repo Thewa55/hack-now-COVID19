@@ -4,29 +4,53 @@ import StateAbbreviations from '../utils/StateAbbreviations.json'
 export default function StateCard(props) {
     // console.log('props is: ' + props)
 
-    let spelledState = StateAbbreviations.find(element => element.abbreviation === props.state.state)
+    let spelledState = StateAbbreviations.find(element => element.abbreviation === props.state.state);
+    let percentPositive = ((props.state.positive / props.state.totalTestResults) * 100).toFixed(0);
+    console.log(percentPositive, spelledState)
     // console.log('spelledState: ' + spelledState.name)
     return (
         <>
-            <div class="ui relaxed list">
+            {/* <div class="ui relaxed list">
                 <div class="item">
                     <div class="content">
                         <a class="header">{spelledState.name} ({props.state.state})</a>
                         <div class="description">Positive Tests: {props.state.positive} Total Tests: {props.state.totalTestResults}</div>
                     </div>
                 </div>
-            </div>
-            {/* <div class="ui cards">
-                <div class="card">
-                    <div class="content">
-                        <div class="header">State spelled out</div>
-                        <div class="meta">{props.state.state}</div>
-                        <div class="description">
-                            Elliot Fu is a film-maker from New York.
-                    </div>
+            </div> */}
+            <div class="card">
+                <div class="content">
+                    <div class="header">
+                        <a>{props.state.state}</a></div>
+                    <div class="meta">
+                        {spelledState.name}</div>
+                    <div class="description">
+                        <div class="ui relaxed list">
+                            <div class="item">
+                                <div class="content">
+                                    <div class="description">Positive Tests: {props.state.positive}</div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="content">
+                                    <div class="description">Total Tests: {props.state.totalTestResults}</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div> */}
+                <div class="extra content">
+                    <div class="ui indicating progress">
+                        <div class="bar" style={{
+                            width: percentPositive * 2
+                            , backgroundColor: 'powderblue'
+                        }}>
+                            <div class="progress"></div>
+                            <div class="label">{percentPositive}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
