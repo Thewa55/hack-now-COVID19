@@ -6,7 +6,7 @@ export default function StateCard(props) {
 
     let spelledState = StateAbbreviations.find(element => element.abbreviation === props.state.state);
     let percentPositive = ((props.state.positive / props.state.totalTestResults) * 100).toFixed(0);
-    console.log(percentPositive, spelledState)
+    // console.log(percentPositive, spelledState)   
     // console.log('spelledState: ' + spelledState.name)
     return (
         <>

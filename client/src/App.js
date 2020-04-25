@@ -45,9 +45,7 @@ function App() {
     getHeadlines()
   }, [])
 
-  console.log(states)
   console.log(headlines)
-  console.log(coords, "coords")
 
   return (
     <div className="App">

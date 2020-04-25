@@ -8,3 +8,7 @@ const membersSchema = new Schema({
   lastname: {type: String, required: true},
   phonenumber: {type: String}
 })
+
+const Members = mongoose.model("Members", membersSchema);
+
+module.exports = Members

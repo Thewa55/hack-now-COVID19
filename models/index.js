@@ -1,3 +1,4 @@
 module.exports = {
-  Members: require("./members")
+  Members: require("./members"),
+  Requests: require("./requests")
 }
