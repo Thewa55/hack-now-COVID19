@@ -8,7 +8,7 @@ function App() {
   const [states, setStates] = useState([])
 
   function getStates(){
-    API.getCurrentCovid()
+    API.getTopHeadlines()
       .then(res => {
         setStates(res.data)
       })
