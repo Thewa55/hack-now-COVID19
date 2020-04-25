@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import {Button, Icon} from 'semantic-ui-react'
-import API from "./utils/API"
+import { Button, Icon } from 'semantic-ui-react';
+import API from "./utils/API";
+import StateCard from './components/StateCard';
 
 function App() {
 
@@ -26,6 +27,11 @@ function App() {
         <Icon name="download" />
         Download
       </Button>
+      {states.map(element => (
+        <StateCard
+        state={element}
+        />
+      ))}
     </div>
   );
 }
