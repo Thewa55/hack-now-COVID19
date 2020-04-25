@@ -17,9 +17,9 @@ export default function StateMenu(props) {
             text: element.state,
             value: element.state,
             name: element.state,
-            // onClick: function handleStateClick(e, {name}) {
-            //     setCurrentState(name)
-            // }
+            onClick: function handleStateClick(e, {value}) {
+                setCurrentState(value)
+            }
         }
     ))
 
@@ -31,7 +31,7 @@ export default function StateMenu(props) {
         <Grid>
             <Grid.Column width={4}>
                 <Menu fluid vertical tabular>
-                <Dropdown pointing='left' className='link item' placeholder='State' search selection options={stateOptions}/>
+                <Dropdown pointing='left' className='link item' placeholder='State' text={currentState} search selection options={stateOptions}/>
                     {/* <Dropdown placeholder='States' pointing='left' className='link item' text={currentState}>
                         <Dropdown.Menu>
                             {allStates.map(element => (
