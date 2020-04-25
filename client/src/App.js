@@ -78,6 +78,7 @@ function App() {
       ></iframe>
       <h3>US Map</h3>
       <iframe style={{width: "1300px", height: "800px", overflow: "hidden"}} src="https://www.arcgis.com/apps/opsdashboard/index.html#/409af567637846e3b5d4182fcd779bea" width="100" height="100" scrolling="no">Iframes not supported</iframe>
+      <div>Maps provided by Johns Hopkins University</div>
     </div>
   );
 }
