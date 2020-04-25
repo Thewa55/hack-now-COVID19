@@ -3,18 +3,21 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 import API from "./utils/API";
 import StateCard from './components/StateCard';
+import StateMenu from './components/StateMenu';
 import MapContainer from './components/MapContainer'
-import Header from "./components/Header"
-import Modal from "./components/Modal"
+import Header from './components/Header'
+import Modal from './components/Modal'
+import StateDropdown from './components/StateDropdown'
 import Signup from "./pages/Signup"
+
 
 function App() {
 
   const [states, setStates] = useState([])
   const [headlines, setHeadlines] = useState([])
-  const [coords, setCoords] = useState({lat: 0, lng: 0})
+  const [coords, setCoords] = useState({ lat: 0, lng: 0 })
 
-  function getStates(){
+  function getStates() {
     API.getCurrentCovid()
       .then(res => {
         setStates(res.data)
@@ -22,13 +25,13 @@ function App() {
   }
 
   function position() {
-     navigator.geolocation.getCurrentPosition(
+    navigator.geolocation.getCurrentPosition(
       position => {
-          setCoords({ 
-          lat: position.coords.latitude, 
+        setCoords({
+          lat: position.coords.latitude,
           lng: position.coords.longitude
         })
-      }, 
+      },
       err => console.log(err)
     );
   }
@@ -50,6 +53,7 @@ function App() {
   console.log(headlines)
 
   return (
+    
     <Router>
       <div className="App">
         <Header />
@@ -57,15 +61,17 @@ function App() {
           <MapContainer coords={coords}/>
         </div>
         <Modal />
-        <div class="ui container">
-          <div class="ui three stackable cards">
-            {states.map(element => (
-              <StateCard
-                state={element}
-              />
-            ))}
-          </div>
+        <StateMenu state={states}/>
+      {/* <div class="ui container">
+        <div class="ui three stackable cards">
+          {states.map(element => (
+            <StateCard
+              state={element}
+            />
+          ))}
         </div>
+      </div> */}
+      {/* <StateDropdown state={states} /> */}
         <h3>World Map</h3>
         <iframe width="650" height="400" frameborder="0" scrolling="no" 
           marginheight="0" marginwidth="0" title="2019-nCoV" 
