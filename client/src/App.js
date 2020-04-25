@@ -4,6 +4,7 @@ import './App.css'
 import Header from './components/Header'
 import Signup from "./pages/Signup"
 import LandingPage from "./pages/Landing"
+import Login from "./pages/Login"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Fragment>
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/SignUp" component={Signup} />
+        <Route exact path="/Login" component={Login} />
       </Fragment>
     </Router>
   );

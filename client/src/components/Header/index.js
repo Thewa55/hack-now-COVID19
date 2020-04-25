@@ -8,7 +8,9 @@ function Header(props) {
             <Link to="/Signup">
               <button>Sign Up</button>
             </Link>
-            <h1 className="routeLinks">test</h1>
+            <Link to="/Login">
+              <button>Login</button>
+            </Link>
         </div>
     ) 
 }
