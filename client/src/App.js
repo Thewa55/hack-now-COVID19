@@ -4,6 +4,7 @@ import API from "./utils/API";
 import StateCard from './components/StateCard';
 import MapContainer from './components/MapContainer'
 import Header from "./components/Header"
+import Modal from "./components/Modal"
 
 function App() {
 
@@ -61,7 +62,7 @@ function App() {
       <div className="Map">
         <MapContainer coords={coords}/>
       </div>
-      
+      <Modal />
       <div class="ui container">
         <div class="ui three stackable cards">
           {states.map(element => (
