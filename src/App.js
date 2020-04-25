@@ -7,19 +7,30 @@ import StateCard from './components/StateCard';
 function App() {
 
   const [states, setStates] = useState([])
+  const [headlines, setHeadlines] = useState([])
+
 
   function getStates(){
-    API.getTopHeadlines()
+    API.getCurrentCovid()
       .then(res => {
         setStates(res.data)
       })
   }
 
+  function getHeadlines(){
+    API.getTopHeadlines()
+      .then(res =>{
+        setHeadlines(res.data)
+      })
+  }
+
   useEffect(() => {
     getStates()
+    getHeadlines()
   }, [])
 
   console.log(states)
+  console.log(headlines)
   return (
     <div className="App">
       landing page
