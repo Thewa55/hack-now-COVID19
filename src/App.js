@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import {Button, Icon} from 'semantic-ui-react'
-import API from "../../utils/API"
+import API from "./utils/API"
 
 function App() {
 
