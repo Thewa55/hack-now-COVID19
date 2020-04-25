@@ -3,8 +3,7 @@ import './App.css';
 import API from "./utils/API";
 import StateCard from './components/StateCard';
 import MapContainer from './components/MapContainer'
-
-import { GoogleMap, Marker } from "react-google-maps"
+import Header from "./components/Header"
 
 function App() {
 
@@ -58,7 +57,7 @@ function App() {
 
   return (
     <div className="App">
-      landing page
+      <Header />
       <div className="Map">
         <MapContainer coords={coords}/>
       </div>
