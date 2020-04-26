@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Form, Input, Button } from 'semantic-ui-react'
 import API from '../../utils/API'
+import { useStoreContext } from '../../utils/GlobalState'
 
 function Signup() {
-  const [error,setError] = useState("")
+
+  const [state, dispatch] = useStoreContext()
+  const [error, setError] = useState("")
   const [members, setMembers] = useState([])
   const [member, setMember] = useState({
     firstname: "",
@@ -19,17 +22,17 @@ function Signup() {
       .then(res => setMembers(res.data))
   }
 
-  function handleInputChange(event){
+  function handleInputChange(event) {
     setError("")
-    const {name, value} = event.target;
-    setMember({...member, [name]: value})
+    const { name, value } = event.target;
+    setMember({ ...member, [name]: value })
   }
 
-  function handleFormSubmit(member){
-    if(member.firstname === "" || member.lastname === "" || member.email === "" || member.password === "" || member.password1 === "" ){
+  function handleFormSubmit(member) {
+    if (member.firstname === "" || member.lastname === "" || member.email === "" || member.password === "" || member.password1 === "") {
       setError("Required input field missing")
     }
-    else if(member.password !== member.password1){
+    else if (member.password !== member.password1) {
       setError("Passwords do not match")
     }
     // else if(members.forEach(element =>{ 
@@ -38,9 +41,18 @@ function Signup() {
     //   }}
     // )){
     // }
-    else{
+    else {
       API.createMember(member)
-      .then(window.location.replace("/"))
+        .then(dispatch({
+          type: "SET_USER",
+          user: {
+            id: member._id,
+            firstname: member.firstname,
+            lastname: member.lastname,
+            email: member.email,
+            phonenumber: member.phonenumber
+          }
+        }))
     }
   }
 
@@ -48,7 +60,7 @@ function Signup() {
     getMembers()
   }, [])
 
-  return(
+  return (
     <Form>
       <Form.Group widths='equal'>
         <Form.Field

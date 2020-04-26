@@ -1,22 +1,29 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  /* background-color: #282c34; */
+  background-image: url(./Images/HeMan.jpg);
+  color: antiquewhite;
+  background-size: cover; 
+}
+ 
  /* App/homepage CSS */
 
 .App {
   text-align: center;
-  /* background-color: #282c34; */
   min-height: 100vh;
   display: inline-block;
   flex-direction: column;
   justify-content: center;
   /* font-size: calc(10px + 2vmin); */
-  color: black;
   width: 100%;
   height: 100%;
+  background-color: #282c34;
 }
 
 .App-link {
   color: #61dafb;
 }
-
 
 /* Map CSS */
 .Map{
@@ -31,6 +38,9 @@
   display: inline-flex;
   flex-direction: row;
   width: 100%;
+  background-color: rgb(26, 26, 26);
+  background-image: url(./Images/HeMan.jpg);
+  color: antiquewhite;
 }
 
 .appName{
