@@ -19,7 +19,8 @@ export default function StateResources(props) {
                         (
                             <>
                                 <List.Item as='a' href={element.covid19Site} active>COVID-19 Site </List.Item>
-                                <List.Item>Twitter Handle: {element.twitter}</List.Item>
+                                <List.Item as='a' href={`https://twitter.com/${element.twitter.slice(1,element.twitter.length)}`} active>Twitter Handle: {element.twitter} </List.Item>
+                                
                                 {/* <a>https://twitter.com/{element.twitter.slice(1)}</a> */}
                             </>
                         )
