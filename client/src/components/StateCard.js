@@ -18,7 +18,7 @@ export default function StateCard(props) {
                     </div>
                 </div>
             </div> */}
-            <div class="card">
+            <div class="green card">
                 <div class="content">
                     <div class="header">
                         <a>{props.state.state}</a></div>

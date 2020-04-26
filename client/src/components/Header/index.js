@@ -14,13 +14,15 @@ function Header(props) {
             {state.currentUser.firstname === "" ? (<> 
               <Link to="/Signup">
                 <button>Sign Up</button>
-                </Link>
-                <Link to="/Login">
+              </Link>
+              <Link to="/Login">
                 <button>Login</button>
-                </Link>
+              </Link>
               </>):(
               <>
-                <button>Logout</button>
+              <Link to="/Profile">
+                <button>Profile</button>
+              </Link>
               </>)
             }
         </div>

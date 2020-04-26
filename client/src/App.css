@@ -1,9 +1,9 @@
 html, body {
   width: 100%;
   height: 100%;
-  /* background-color: #282c34; */
-  background-image: url(./Images/HeMan.jpg);
-  color: antiquewhite;
+  background-color: grey;
+  /* background-image: url(./Images/HeMan.jpg); */
+  color: black;
   background-size: cover; 
 }
  
@@ -39,7 +39,6 @@ html, body {
   flex-direction: row;
   width: 100%;
   background-color: rgb(26, 26, 26);
-  background-image: url(./Images/HeMan.jpg);
   color: antiquewhite;
 }
 
@@ -57,4 +56,9 @@ html, body {
   justify-content: right;
   text-align: right;
   margin-right: 5%;
+}
+
+/* Card CSS */
+.card{
+  color: white;
 }
