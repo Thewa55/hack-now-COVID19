@@ -5,7 +5,7 @@ function Request(){
   const [request, setRequest] = useState([])
 
   function getRequests() {
-    API.getRequests
+    API.getRequests()
       .then(res => setRequest(res.data))
   }
 
