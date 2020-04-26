@@ -3,6 +3,7 @@ import Modal from '../../components/Modal'
 import API from "../../utils/API";
 import StateMenu from '../../components/StateMenu';
 import MapContainer from '../../components/MapContainer'
+import StateResources from '../../components/StateResources';
 import {Container} from 'semantic-ui-react'
 
 function LandingPage() {
@@ -10,6 +11,7 @@ function LandingPage() {
   const [states, setStates] = useState([])
   const [headlines, setHeadlines] = useState([])
   const [totalUS, setTotalUS] = useState([])
+  const [stateRes, setStateRes] = useState([])
   const [coords, setCoords] = useState({ lat: 0, lng: 0 })
 
   function getStates() {
@@ -43,6 +45,12 @@ function LandingPage() {
         setHeadlines(res.data)
       })
   }
+  
+  function getStateResources() {
+    API.getStateRes().then(res => {
+      setStateRes(res.data)
+    })
+  }
 
 
   useEffect(() => {
@@ -50,6 +58,7 @@ function LandingPage() {
     getStates()
     getHeadlines()
     getTotalUS()
+    getStateResources()
   }, [])
 
   console.log(headlines)
@@ -62,7 +71,7 @@ function LandingPage() {
         <MapContainer coords={coords} />
       </div> */}
       <Modal />
-      <StateMenu state={states} total={totalUS}/>
+      <StateMenu state={states} total={totalUS} res={stateRes}/>
       {/* <h3>World Map</h3>
       <iframe width="650" height="400" frameborder="0" scrolling="no"
         marginheight="0" marginwidth="0" title="2019-nCoV"
