@@ -14,6 +14,10 @@ export default {
     return axios.get(`https://newsapi.org/v2/everything?q=COVID&from=2020-04-23&sortBy=publishedAt&apiKey=${newsapi}&pageSize=100`)
   },
 
+  getStateRes: function(){
+    return axios.get('https://covidtracking.com/api/states/info')
+  },
+
   getMap: function(){
     return axios.get(`https://maps.googleapis.com/maps/api/js?key=${googleMapApi}&callback=initMap`)
   },

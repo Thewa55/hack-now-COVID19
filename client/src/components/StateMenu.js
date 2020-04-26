@@ -14,6 +14,7 @@ export default function StateMenu(props) {
     };
 
     let filteredState = props.state.filter(element => element.state.includes(currentState))
+    let filteredStateRes = props.res.filter(element => element.state.includes(currentState))
 
     const renderPage = active => {
         switch (active) {
@@ -21,7 +22,7 @@ export default function StateMenu(props) {
                 return <StateCases info={filteredState} activeState={currentState} total={props.total}/>
             }
             case "resources": {
-                return <StateResources info={props.state}/>
+                return <StateResources res={filteredStateRes}/>
             }
         }
     }
