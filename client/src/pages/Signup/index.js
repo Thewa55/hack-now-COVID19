@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Form, Input, Button } from 'semantic-ui-react'
 import API from '../../utils/API'
 
 function Signup() {
   const [error,setError] = useState("")
+  const [members, setMembers] = useState([])
   const [member, setMember] = useState({
     firstname: "",
     lastname: "",
@@ -13,6 +14,11 @@ function Signup() {
     password1: "",
   })
 
+  function getMembers() {
+    API.getMember()
+      .then(res => setMembers(res.data))
+  }
+
   function handleInputChange(event){
     setError("")
     const {name, value} = event.target;
@@ -20,17 +26,27 @@ function Signup() {
   }
 
   function handleFormSubmit(member){
-    if(member.firstname === "" || member.lastname === "" || member.email === "" ){
+    if(member.firstname === "" || member.lastname === "" || member.email === "" || member.password === "" || member.password1 === "" ){
       setError("Required input field missing")
     }
     else if(member.password !== member.password1){
       setError("Passwords do not match")
     }
+    // else if(members.forEach(element =>{ 
+    //   if(element.email === member.email){
+    //     return setError("The email is already registered")
+    //   }}
+    // )){
+    // }
     else{
       API.createMember(member)
-        .then(console.log("Member created"))
+      .then(window.location.replace("/"))
     }
   }
+
+  useEffect(() => {
+    getMembers()
+  }, [])
 
   return(
     <Form>
