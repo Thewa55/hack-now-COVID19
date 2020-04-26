@@ -5,21 +5,22 @@ import Header from './components/Header'
 import Signup from "./pages/Signup"
 import LandingPage from "./pages/Landing"
 import Login from "./pages/Login"
-import MemberContext from "./utils/MemberContext"
+// import MemberContext from "./utils/MemberContext"
 import Request from "./pages/Request"
+import { StoreProvider } from './utils/GlobalState'
 
 function App() {
   return (
     <Router>
-      <MemberContext.Provider>
-        <Header />
-        <Fragment>
-          <Route exact path="/" component={LandingPage} />
-          <Route exact path="/SignUp" component={Signup} />
-          <Route exact path="/Login" component={Login} />
-          <Route exact path="/Request" component={Request} />
-        </Fragment>
-      </MemberContext.Provider>
+        <StoreProvider>
+          <Header />
+          <Fragment>
+            <Route exact path="/" component={LandingPage} />
+            <Route exact path="/SignUp" component={Signup} />
+            <Route exact path="/Login" component={Login} />
+            <Route exact path="/Request" component={Request} />
+          </Fragment>
+        </StoreProvider>
     </Router>
   );
 }
