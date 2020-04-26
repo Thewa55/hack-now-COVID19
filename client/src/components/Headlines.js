@@ -5,10 +5,11 @@ export default function Headlines(props) {
     console.log('news ', props.news)
     let news = props.news.articles
     return(
-        <List>
+        <List ordered>
+            <h2>COVID-19 News Headlines</h2>
             {news.map(element => (
                 <>
-                <List.Item href={element.url}>{element.title}</List.Item>
+                <List.Item as="a" href={element.url} target="_blank">{element.title}</List.Item>
                 </>
             ))}
         </List>

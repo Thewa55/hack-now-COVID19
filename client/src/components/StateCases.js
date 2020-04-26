@@ -9,8 +9,6 @@ export default function StateCases(props) {
     let spelledState = StateAbbreviations.find(element => element.abbreviation === activeState);
     let totalData = props.total
 
-    // console.log(props.total)
-
     return (
 
         <List>
