@@ -31,4 +31,7 @@ The purpose of this project was to build an application to bring the community c
 - Postman
 - Robo 3T
 
+## Repository
+https://github.com/Thewa55/hack-now-COVID19
+
 ### App was created by Kenny Lam, Henry Ni, and Bryan Teng
