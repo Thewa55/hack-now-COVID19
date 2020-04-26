@@ -3,8 +3,8 @@ import Modal from '../../components/Modal'
 import API from "../../utils/API";
 import StateMenu from '../../components/StateMenu';
 import MapContainer from '../../components/MapContainer'
-import StateResources from '../../components/StateResources';
 import {Container} from 'semantic-ui-react'
+import { useStoreContext } from '../../utils/GlobalState'
 
 function LandingPage() {
 
@@ -13,6 +13,7 @@ function LandingPage() {
   const [totalUS, setTotalUS] = useState([])
   const [stateRes, setStateRes] = useState([])
   const [coords, setCoords] = useState({ lat: 0, lng: 0 })
+  const [state,dispatch] = useState()
 
   function getStates() {
     API.getCurrentCovid()
@@ -61,6 +62,7 @@ function LandingPage() {
     getStateResources()
   }, [])
 
+  console.log('state ', state);
   console.log(headlines)
   return (
     <Container>
