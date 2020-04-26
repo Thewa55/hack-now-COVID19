@@ -14,6 +14,9 @@ export default {
 
   getMap: function(){
     return axios.get(`https://maps.googleapis.com/maps/api/js?key=${googleMapApi}&callback=initMap`)
+  },
 
+  createMember: function(member){
+    return axios.post("api/members", member)
   }
 }
