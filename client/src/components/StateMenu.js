@@ -4,6 +4,7 @@ import { PromiseProvider } from 'mongoose'
 import StateCases from '../components/StateCases'
 import StateResources from '../components/StateResources'
 import Headlines from '../components/Headlines'
+import Links from '../components/Links'
 
 export default function StateMenu(props) {
 
@@ -28,6 +29,9 @@ export default function StateMenu(props) {
             }
             case "headlines": {
                 return <Headlines news={news}/>
+            }
+            case "links": {
+                return <Links/>
             }
         }   
     }
