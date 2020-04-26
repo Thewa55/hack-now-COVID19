@@ -40,6 +40,7 @@ html, body {
   width: 100%;
   background-color: rgb(26, 26, 26);
   color: antiquewhite;
+  align-items: center;
 }
 
 .appName{
@@ -61,4 +62,48 @@ html, body {
 /* Card CSS */
 .card{
   color: white;
+}
+
+/* Profile CSS */
+.Profile{
+  display: inherit;
+  height: 100%;
+  width: 100%;
+  align-content: center;
+  align-self: center;
+  margin-left: 25%;
+  margin-top: 10vh;
+  color: antiquewhite;
+}
+
+.paragraphs{
+  align-items: center;
+  align-content: space-between;
+  align-content: flex-start;
+  display: inline-block;
+  padding: 5px;
+}
+
+.paragraphs span{
+  width: 25%;
+  padding: 5px;
+  float: right;
+  align: center;
+}
+
+.paragraphs span::before{
+  display: inline-block;
+    content: '';
+    -webkit-border-radius: 0.375rem;
+    border-radius: 0.375rem;
+    height: 0.75rem;
+    width: 0.75rem;
+    margin-right: 0.5rem;
+    background-color: #bdbdbd;
+}
+
+.paragraphs iframe{
+  width: 75%;
+  float: left;
+
 }

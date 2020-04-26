@@ -1,8 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import Modal from '../../components/Modal'
 import API from "../../utils/API";
 import StateMenu from '../../components/StateMenu';
-import MapContainer from '../../components/MapContainer'
 import {Container} from 'semantic-ui-react'
 import { useStoreContext } from '../../utils/GlobalState'
 
@@ -71,7 +69,6 @@ function LandingPage() {
       {/* <div className="Map">
         <MapContainer coords={coords} />
       </div> */}
-      <Modal />
       <StateMenu state={states} total={totalUS} res={stateRes} news={headlines}/>
       {/* <h3>World Map</h3>
       <iframe width="650" height="400" frameborder="0" scrolling="no"

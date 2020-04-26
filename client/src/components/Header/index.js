@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import Modal from '../../components/Modal'
+
 import { useStoreContext } from '../../utils/GlobalState'
 
 function Header(props) {
@@ -9,19 +11,20 @@ function Header(props) {
         <div className="Header">
             <h1 className="appName">Covinder!</h1>
             <Link to="/">
-              <button>Home</button>
+              <button className="ui button" >Home</button>
             </Link>
+            <Modal />
             {state.currentUser.firstname === "" ? (<> 
               <Link to="/Signup">
-                <button>Sign Up</button>
+                <button className="ui button" >Sign Up</button>
               </Link>
               <Link to="/Login">
-                <button>Login</button>
+                <button className="ui button" >Login</button>
               </Link>
               </>):(
               <>
               <Link to="/Profile">
-                <button>Profile</button>
+                <button className="ui button" >Profile</button>
               </Link>
               </>)
             }
