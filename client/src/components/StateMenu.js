@@ -3,6 +3,7 @@ import { Grid, Menu, Segment, Dropdown } from 'semantic-ui-react'
 import StateAbbreviations from '../utils/StateAbbreviations.json'
 import { PromiseProvider } from 'mongoose'
 import StateCases from '../components/StateCases'
+import StateResources from '../components/StateResources'
 
 export default function StateMenu(props) {
 
@@ -13,14 +14,16 @@ export default function StateMenu(props) {
         setActive(name)
     };
 
+    let filteredState = props.state.filter(element => element.state.includes(currentState))
+
     const renderPage = active => {
         switch (active) {
             case "cases": {
-                return <StateCases info={props.state} activeState={currentState} />
+                return <StateCases info={filteredState} activeState={currentState} />
             }
-            // case "resources": {
-            //     retur
-            // }
+            case "resources": {
+                return <StateResources info={props.state}/>
+            }
         }
     }
 
@@ -66,6 +69,7 @@ export default function StateMenu(props) {
                         active={active === 'links'}
                         onClick={handleItemClick}
                     />
+                    <Menu.Item/>
                 </Menu>
             </Grid.Column>
 
