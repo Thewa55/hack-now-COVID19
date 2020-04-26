@@ -8,7 +8,7 @@ function Signup() {
 
   const [state, dispatch] = useStoreContext()
   const [error, setError] = useState("")
-  const [members, setMembers] = useState([])
+  // const [members, setMembers] = useState([])
   const [member, setMember] = useState({
     firstname: "",
     lastname: "",
@@ -18,10 +18,10 @@ function Signup() {
     password1: "",
   })
 
-  function getMembers() {
-    API.getMember()
-      .then(res => setMembers(res.data))
-  }
+  // function getMembers() {
+  //   API.getMember()
+  //     .then(res => setMembers(res.data))
+  // }
 
   function handleInputChange(event) {
     setError("")
@@ -36,12 +36,6 @@ function Signup() {
     else if (member.password !== member.password1) {
       setError("Passwords do not match")
     }
-    // else if(members.forEach(element =>{ 
-    //   if(element.email === member.email){
-    //     return setError("The email is already registered")
-    //   }}
-    // )){
-    // }
     else {
       API.createMember(member)
         .then(dispatch({
@@ -57,9 +51,9 @@ function Signup() {
     }
   }
 
-  useEffect(() => {
-    getMembers()
-  }, [])
+  // useEffect(() => {
+  //   getMembers()
+  // }, [])
 
   return (
     <Container>
