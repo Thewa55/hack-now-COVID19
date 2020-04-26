@@ -4,7 +4,7 @@ import './App.css'
 import Header from './components/Header'
 import Signup from "./pages/Signup"
 import LandingPage from "./pages/Landing"
-import Login from "./pages/LogIn"
+import Login from "./pages/Login"
 import MemberContext from "./utils/MemberContext"
 
 function App() {
