@@ -28,5 +28,9 @@ export default {
 
   getMember: function(){
     return axios.get("api/members")
+  },
+
+  getRequests: function(){
+    return axios.get("api/request")
   }
 }
