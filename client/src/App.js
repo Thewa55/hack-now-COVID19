@@ -6,6 +6,7 @@ import Signup from "./pages/Signup"
 import LandingPage from "./pages/Landing"
 import Login from "./pages/Login"
 import MemberContext from "./utils/MemberContext"
+import Request from "./pages/Request"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/SignUp" component={Signup} />
           <Route exact path="/Login" component={Login} />
+          <Route exact path="/Request" component={Request} />
         </Fragment>
       </MemberContext.Provider>
     </Router>
