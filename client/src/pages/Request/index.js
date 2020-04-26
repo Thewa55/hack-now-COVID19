@@ -8,8 +8,16 @@ function Request(){
   const [state, dispatch] = useStoreContext()
 
   function getRequests() {
+    let filter = []
     API.getRequests()
-      .then(res => setRequest(res.data))
+      .then(res => 
+        res.data.forEach(element => {
+          if(element.lat-.1 < state.currentUser.lat && element.lat+.1 > state.currentUser.lat && element.long-.1 <state.currentUser.long && element.long+.1>state.currentUser.long ){
+            filter.push(element)
+            setRequest(filter)
+          }
+        })
+      )
   }
 
   useEffect(() => {
@@ -22,29 +30,17 @@ function Request(){
     <Table celled>
     <Table.Header>
       <Table.Row>
-        <Table.HeaderCell>Header</Table.HeaderCell>
-        <Table.HeaderCell>Header</Table.HeaderCell>
-        <Table.HeaderCell>Header</Table.HeaderCell>
+        <Table.HeaderCell>Item</Table.HeaderCell>
+        <Table.HeaderCell>Email</Table.HeaderCell>
+        <Table.HeaderCell>Location</Table.HeaderCell>
       </Table.Row>
     </Table.Header>
 
     <Table.Body>
       <Table.Row>
-        <Table.Cell>
-          <Label ribbon>First</Label>
-        </Table.Cell>
-        <Table.Cell>Cell</Table.Cell>
-        <Table.Cell>Cell</Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.Cell>Cell</Table.Cell>
-        <Table.Cell>Cell</Table.Cell>
-        <Table.Cell>Cell</Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.Cell>Cell</Table.Cell>
-        <Table.Cell>Cell</Table.Cell>
-        <Table.Cell>Cell</Table.Cell>
+        <Table.Cell>request.item</Table.Cell>
+        <Table.Cell>request.email</Table.Cell>
+        <Table.Cell>window.open('https://www.google.com/maps/@request.lat,request.long,15z','_blank')</Table.Cell>
       </Table.Row>
     </Table.Body>
   </Table>
