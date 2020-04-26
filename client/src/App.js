@@ -12,18 +12,20 @@ import Profile from "./pages/Profile"
 
 function App() {
   return (
+
     <Router>
+      <Header />
+      <Fragment>
         <StoreProvider>
-          <Header />
-          <Fragment>
-            <Route exact path="/" component={LandingPage} />
-            <Route exact path="/SignUp" component={Signup} />
-            <Route exact path="/Login" component={Login} />
-            <Route exact path="/Request" component={Request} />
-            <Route exact path="/Profile" component={Profile} />
-          </Fragment>
+          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/SignUp" component={Signup} />
+          <Route exact path="/Login" component={Login} />
+          <Route exact path="/Request" component={Request} />
+          <Route exact path="/Profile" component={Profile} />
         </StoreProvider>
+      </Fragment>
     </Router>
+
   );
 }
 

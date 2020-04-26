@@ -5,6 +5,9 @@ function Header(props) {
     return(
         <div className="Header">
             <h1 className="appName">Covinder!</h1>
+            <Link to="/">
+              <button>Home</button>
+            </Link>
             <Link to="/Signup">
               <button>Sign Up</button>
             </Link>
