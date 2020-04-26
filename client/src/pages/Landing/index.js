@@ -60,7 +60,7 @@ function LandingPage() {
     getHeadlines()
     getTotalUS()
     getStateResources()
-  }, [])
+  }, [state])
 
   console.log('state ', state);
   console.log(headlines)

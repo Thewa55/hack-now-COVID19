@@ -20,7 +20,7 @@ function Header(props) {
                 </Link>
               </>):(
               <>
-
+                <button>Logout</button>
               </>)
             }
         </div>
