@@ -56,9 +56,11 @@ function LandingPage() {
   return (
     <Container>
     <div>
-      <div className="Map">
+      <iframe style={{ width: "100%", height: "600px", overflow: "hidden" }} src="https://www.arcgis.com/apps/opsdashboard/index.html#/409af567637846e3b5d4182fcd779bea" width="100" height="100" scrolling="no">Iframes not supported</iframe>
+      <div>Maps provided by Johns Hopkins University</div>
+      {/* <div className="Map">
         <MapContainer coords={coords} />
-      </div>
+      </div> */}
       <Modal />
       <StateMenu state={states} total={totalUS}/>
       {/* <h3>World Map</h3>
@@ -66,9 +68,6 @@ function LandingPage() {
         marginheight="0" marginwidth="0" title="2019-nCoV"
         src="//arcgis.com/apps/Embed/index.html?webmap=14aa9e5660cf42b5b4b546dec6ceec7c&extent=77.3846,11.535,163.5174,52.8632&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light"
       ></iframe> */}
-      <h3>US Map</h3>
-      <iframe style={{ width: "100%", height: "800px", overflow: "hidden" }} src="https://www.arcgis.com/apps/opsdashboard/index.html#/409af567637846e3b5d4182fcd779bea" width="100" height="100" scrolling="no">Iframes not supported</iframe>
-      <div>Maps provided by Johns Hopkins University</div>
     </div>
     </Container>
   )
