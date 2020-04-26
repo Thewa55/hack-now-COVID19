@@ -5,7 +5,7 @@ import { List } from 'semantic-ui-react'
 export default function StateResources(props) {
 
     let stateObj = props.res;
-    console.log(stateObj);
+    // console.log(stateObj);
     let activeState = props.activeState;
     // console.log(activeState)
     let spelledState = StateAbbreviations.find(element => element.abbreviation === activeState);
@@ -18,7 +18,7 @@ export default function StateResources(props) {
                     {stateObj.map(element =>
                         (
                             <>
-                                <List.Item as='a' href={element.covid19Site} active>COVID-19 Site </List.Item>
+                                <List.Item as='a' href={element.covid19Site} active target="_blank">COVID-19 Site </List.Item>
                                 <List.Item as='a' target="_blank" href={`https://twitter.com/${element.twitter.slice(1,element.twitter.length)}`} active>Twitter Handle: {element.twitter} </List.Item>
                                 
                                 {/* <a>https://twitter.com/{element.twitter.slice(1)}</a> */}

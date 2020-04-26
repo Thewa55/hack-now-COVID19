@@ -60,7 +60,6 @@ function LandingPage() {
     getStateResources()
   }, [state])
 
-  console.log(headlines)
   return (
     <Container>
     <div>
