@@ -3,9 +3,14 @@ import { List } from 'semantic-ui-react'
 
 export default function Headlines(props) {
     console.log('news ', props.news)
+    let news = props.news.articles
     return(
         <List>
-            <h2>Hello World</h2>
+            {news.map(element => (
+                <>
+                <List.Item href={element.url}>{element.title}</List.Item>
+                </>
+            ))}
         </List>
     )
 }
