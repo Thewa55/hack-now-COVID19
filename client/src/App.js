@@ -8,6 +8,7 @@ import Login from "./pages/Login"
 // import MemberContext from "./utils/MemberContext"
 import Request from "./pages/Request"
 import { StoreProvider } from './utils/GlobalState'
+import Profile from "./pages/Profile"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route exact path="/SignUp" component={Signup} />
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Request" component={Request} />
+            <Route exact path="/Profile" component={Profile} />
           </Fragment>
         </StoreProvider>
     </Router>
