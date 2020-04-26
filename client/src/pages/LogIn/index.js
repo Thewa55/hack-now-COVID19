@@ -38,8 +38,8 @@ function Login() {
             phonenumber: member.phonenumber
           }
         })
-        // window.location.replace("/")
-        console.log("Logged in")
+        // (window.location.replace("/"))
+        // console.log("Logged in")
       }
       else {
         setError("Incorrect password or email")

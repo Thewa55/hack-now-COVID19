@@ -1,16 +1,28 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import { useStoreContext } from '../../utils/GlobalState'
 
 function Header(props) {
-    return(
+  const [state,dispatch] = useStoreContext()
+
+  return(
         <div className="Header">
             <h1 className="appName">Covinder!</h1>
-            <Link to="/Signup">
-              <button>Sign Up</button>
+            <Link to="/">
+              <button>Home</button>
             </Link>
-            <Link to="/Login">
-              <button>Login</button>
-            </Link>
+            {state.currentUser.firstname === "" ? (<> 
+              <Link to="/Signup">
+                <button>Sign Up</button>
+                </Link>
+                <Link to="/Login">
+                <button>Login</button>
+                </Link>
+              </>):(
+              <>
+
+              </>)
+            }
         </div>
     ) 
 }
