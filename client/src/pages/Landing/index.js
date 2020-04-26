@@ -64,7 +64,7 @@ function LandingPage() {
   return (
     <Container>
     <div>
-      <iframe style={{ width: "100%", height: "600px", overflow: "hidden" }} src="https://www.arcgis.com/apps/opsdashboard/index.html#/409af567637846e3b5d4182fcd779bea" width="100" height="100" scrolling="no">Iframes not supported</iframe>
+      <iframe style={{ width: "100%", height: "500px", overflow: "hidden" }} src="https://www.arcgis.com/apps/opsdashboard/index.html#/409af567637846e3b5d4182fcd779bea" width="100" height="100" scrolling="no">Iframes not supported</iframe>
       <div>Maps provided by Johns Hopkins University</div>
       {/* <div className="Map">
         <MapContainer coords={coords} />
