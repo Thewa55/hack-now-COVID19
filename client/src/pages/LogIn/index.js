@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Input, Form } from 'semantic-ui-react'
 import API from '../../utils/API';
-import MemberContect from '../../utils/MemberContext'
 import { useStoreContext } from '../../utils/GlobalState'
 
 function Login() {
@@ -39,6 +38,7 @@ function Login() {
             phonenumber: member.phonenumber
           }
         })
+        // window.location.replace("/")
         console.log("Logged in")
       }
       else {

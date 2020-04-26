@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import API from '../../utils/API'
 import { Icon, Label, Menu, Table, Container } from 'semantic-ui-react'
+import { useStoreContext } from '../../utils/GlobalState'
 
 function Request(){
   const [request, setRequest] = useState([])
+  const [state, dispatch] = useStoreContext()
 
   function getRequests() {
     API.getRequests()
@@ -13,7 +15,8 @@ function Request(){
   useEffect(() => {
     getRequests()
   }, [])
-
+  
+  console.log(state)
   return(
     <Container>
     <Table celled>
