@@ -47,25 +47,6 @@ function Login() {
     })
   }
   console.log('state ', state)
-  function checkUser(email) {
-    API.getUsers().then(res => {
-      const isUser = res.data.find(({ Email }) => Email === email)
-      if (!isUser) {
-        API.saveUsers({ Email: email })
-          .then(res =>
-            dispatch({
-              type: "SET_USER",
-              user: {
-                id: res.data._id,
-                email: res.data.Email,
-                transactions: [],
-                shoppingCart: [],
-                wishList: []
-              }
-            }))
-      }
-    })
-  }
 
   useEffect(() => {
     getMembers()

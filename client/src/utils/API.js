@@ -29,6 +29,10 @@ export default {
     return axios.post("api/members", member)
   },
 
+  createRequest: function(item){
+    return axios.post("api/request", item)
+  },
+  
   getMember: function(){
     return axios.get("api/members")
   },

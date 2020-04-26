@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Grid, Menu, Segment, Dropdown } from 'semantic-ui-react'
-import { PromiseProvider } from 'mongoose'
 import StateCases from '../components/StateCases'
 import StateResources from '../components/StateResources'
 import Headlines from '../components/Headlines'
