@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import API from '../../utils/API'
 
 function Request(){
-  const [request, setRequest] = setState([])
+  const [request, setRequest] = useState([])
 
   function getRequests() {
     API.getRequests
