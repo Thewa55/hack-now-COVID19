@@ -13,7 +13,7 @@ function LandingPage() {
   const [totalUS, setTotalUS] = useState([])
   const [stateRes, setStateRes] = useState([])
   const [coords, setCoords] = useState({ lat: 0, lng: 0 })
-  const [state,dispatch] = useState()
+  const [state,dispatch] = useStoreContext()
 
   function getStates() {
     API.getCurrentCovid()
