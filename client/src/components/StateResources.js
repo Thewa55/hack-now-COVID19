@@ -5,7 +5,7 @@ import { List } from 'semantic-ui-react'
 export default function StateResources(props) {
 
     let stateObj = props.res;
-    console.log(stateObj);
+    // console.log(stateObj);
     let activeState = props.activeState;
     // console.log(activeState)
     let spelledState = StateAbbreviations.find(element => element.abbreviation === activeState);

@@ -60,9 +60,8 @@ function LandingPage() {
     getHeadlines()
     getTotalUS()
     getStateResources()
-  }, [])
+  }, [state])
 
-  console.log('state ', state);
   console.log(headlines)
   return (
     <Container>
@@ -73,7 +72,7 @@ function LandingPage() {
         <MapContainer coords={coords} />
       </div> */}
       <Modal />
-      <StateMenu state={states} total={totalUS} res={stateRes}/>
+      <StateMenu state={states} total={totalUS} res={stateRes} news={headlines}/>
       {/* <h3>World Map</h3>
       <iframe width="650" height="400" frameborder="0" scrolling="no"
         marginheight="0" marginwidth="0" title="2019-nCoV"

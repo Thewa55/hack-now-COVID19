@@ -27,7 +27,7 @@ function Login() {
   function handleFormSubmit(login) {
     members.forEach(member => {
       if (member.email === login.email && member.password === login.password) {
-        console.log('member ', member)
+        // console.log('member ', member)
         dispatch({
           type: "SET_USER",
           user: {

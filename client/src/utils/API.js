@@ -10,9 +10,12 @@ export default {
   getCurrentUS: function(){
     return axios.get("http://covidtracking.com/api/us")
   },
+ 
+
   getTopHeadlines: function(){
-    return axios.get(`https://newsapi.org/v2/everything?q=COVID&from=2020-04-23&sortBy=publishedAt&apiKey=${newsapi}&pageSize=100`)
+    return axios.get(`https://newsapi.org/v2/top-headlines?country=us&q=coronavirus&apiKey=${newsapi}&pageSize=100`)
   },
+  // https://newsapi.org/v2/everything?q=COVID&from=2020-04-23&sortBy=publishedAt&apiKey=${newsapi}&pageSize=100
 
   getStateRes: function(){
     return axios.get('https://covidtracking.com/api/states/info')
