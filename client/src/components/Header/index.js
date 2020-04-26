@@ -13,6 +13,9 @@ function Header(props) {
             <Link to="/">
               <button className="ui button" >Home</button>
             </Link>
+            <Link to="/Request">
+              <button className="ui button" >Requests</button>
+            </Link>
             <Modal />
             {state.currentUser.firstname === "" ? (<> 
               <Link to="/Signup">

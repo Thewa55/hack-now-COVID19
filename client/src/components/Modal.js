@@ -1,8 +1,9 @@
 import React from 'react'
 import { Button, Header, Modal } from 'semantic-ui-react'
+import './style.css'
 
 const ProtectModal = () => (
-  <Modal trigger={<Button>Safety Tips!</Button>}>
+  <Modal trigger={<Button>Safety Tips!</Button>} className="Protect">
     <Modal.Header>Protect yourself and others!</Modal.Header>
     <Modal.Content className="scrolling" style={{height:'100%',overflowY: "scroll"}}>
       <Modal.Description>

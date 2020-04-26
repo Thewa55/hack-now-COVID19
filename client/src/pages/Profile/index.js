@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import API from '../../utils/API'
 import { useStoreContext } from '../../utils/GlobalState'
+import EditProfile from '../../components/EditProfile'
 
 function Profile(){
   const [request, setRequest] = useState([])
@@ -18,6 +19,7 @@ function Profile(){
       <br/>
       <h3>Email: {email} </h3>
       <h3>Phone Number: {phonenumber} </h3>
+      <EditProfile />
     </div>
   )
 }
