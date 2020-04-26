@@ -22,7 +22,7 @@ export default function StateMenu(props) {
                 return <StateCases info={filteredState} activeState={currentState} total={props.total}/>
             }
             case "resources": {
-                return <StateResources res={filteredStateRes}/>
+                return <StateResources res={filteredStateRes} activeState={currentState}/>
             }
         }
     }

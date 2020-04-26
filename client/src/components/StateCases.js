@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { List } from 'semantic-ui-react'
 import StateAbbreviations from '../utils/StateAbbreviations.json'
-import API from '../utils/API';
 
 export default function StateCases(props) {
 
     let stateObj = props.info;
     let activeState = props.activeState;
     let spelledState = StateAbbreviations.find(element => element.abbreviation === activeState);
-
-    // const [totalUS, setTotalUS] = useState("")
-
-
-
     let totalData = props.total
 
     console.log(props.total)
