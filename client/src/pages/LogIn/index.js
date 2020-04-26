@@ -74,31 +74,33 @@ function Login() {
 
   console.log(members)
   return (
-    <Form>
-      <Form.Field
-        id='form-input-control-error-email'
-        control={Input}
-        label='Email'
-        placeholder='joe@schmoe.com'
-        name='email'
-        onChange={handleInputChange}
-      />
-      <Form.Field
-        control={Input}
-        label='Password'
-        placeholder='Password'
-        name='password'
-        type='password'
-        onChange={handleInputChange}
-      />
-      <Form.Field
-        id='form-button-control-public'
-        control={Button}
-        content='Submit'
-        onClick={() => handleFormSubmit(login)}
-      />
-      <div>{error}</div>
-    </Form>
+    <div className="styleDiv">
+      <Form>
+        <Form.Field
+          id='form-input-control-error-email'
+          control={Input}
+          label='Email'
+          placeholder='joe@schmoe.com'
+          name='email'
+          onChange={handleInputChange}
+        />
+        <Form.Field
+          control={Input}
+          label='Password'
+          placeholder='Password'
+          name='password'
+          type='password'
+          onChange={handleInputChange}
+        />
+        <Form.Field
+          id='form-button-control-public'
+          control={Button}
+          content='Submit'
+          onClick={() => handleFormSubmit(login)}
+        />
+        <div>{error}</div>
+      </Form>
+    </div>
   )
 }
 

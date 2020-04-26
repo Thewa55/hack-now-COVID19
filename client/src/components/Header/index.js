@@ -14,6 +14,9 @@ function Header(props) {
             <Link to="/Login">
               <button>Login</button>
             </Link>
+            <Link to="/Profile">
+              <button>My Profile</button>
+            </Link>
         </div>
     ) 
 }

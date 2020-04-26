@@ -1,17 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import API from '../../utils/API'
+import { useStoreContext } from '../../utils/GlobalState'
 
 function Profile(){
   const [request, setRequest] = useState([])
-
-  function getRequests() {
-    API.getRequests
-      .then(res => setRequest(res.data))
-  }
-
-  useEffect(() => {
-    getRequests()
-  }, [])
+  const [state, dispatch] = useStoreContext()
 
   return(
     <div>
@@ -21,4 +14,4 @@ function Profile(){
   )
 }
 
-export default Request;
+export default Profile;
