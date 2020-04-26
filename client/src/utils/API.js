@@ -7,7 +7,9 @@ export default {
   getCurrentCovid: function(){
     return axios.get("https://covidtracking.com/api/states")
   },
-
+  getCurrentUS: function(){
+    return axios.get("http://covidtracking.com/api/us")
+  },
   getTopHeadlines: function(){
     return axios.get(`https://newsapi.org/v2/everything?q=COVID&from=2020-04-23&sortBy=publishedAt&apiKey=${newsapi}&pageSize=100`)
   },
