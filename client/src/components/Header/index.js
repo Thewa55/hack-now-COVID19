@@ -21,8 +21,8 @@ function Header(props) {
               <Link to="/Signup">
                 <button className="ui button" >Sign Up</button>
               </Link>
-              <Link to="/Login">
-                <button className="ui button" >Login</button>
+              <Link to="/Signin">
+                <button className="ui button" >Sign In</button>
               </Link>
               </>):(
               <>
