@@ -4,7 +4,7 @@ import './App.css'
 import Header from './components/Header'
 import Signup from "./pages/Signup"
 import LandingPage from "./pages/Landing"
-import Login from "./pages/Login"
+import Login from "./pages/Login/index.js"
 import Request from "./pages/Request"
 import { StoreProvider } from './utils/GlobalState'
 import Profile from "./pages/Profile"
